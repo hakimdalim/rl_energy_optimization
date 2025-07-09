@@ -1,0 +1,15 @@
+{
+  "rl_agent_cost": 131911.65712285103,
+  "baseline_cost": 113360.0,
+  "cost_improvement_percent": -16.365258576968092,
+  "total_cost_savings": -18551.65712285103,
+  "actions_summary": {
+    "avg_gas_output": 68.2522223104884,
+    "avg_storage_action": 0.213063912068525,
+    "avg_h2_production": 15.938877105791315,
+    "avg_dr_activation": 0.5436391007520798,
+    "gas_utilization": 1.0,
+    "storage_charging_freq": 0.7192982456140351,
+    "h2_production_freq": 0.9649122807017544
+  }
+}
