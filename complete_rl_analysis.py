@@ -15,7 +15,7 @@ def run_complete_rl_analysis():
     Complete RL analysis with automatic result saving
     """
     
-    print("🚀 COMPLETE RL ENERGY OPTIMIZATION ANALYSIS")
+    print("COMPLETE RL ENERGY OPTIMIZATION ANALYSIS")
     print("="*60)
     
     # Configuration
@@ -23,7 +23,7 @@ def run_complete_rl_analysis():
     episodes = 50
     
     # Step 1: Load and check data
-    print(f"📂 Step 1: Loading data from {pickle_path}")
+    print(f"Step 1: Loading data from {pickle_path}")
     
     try:
         # Import the updated run script
@@ -41,32 +41,32 @@ def run_complete_rl_analysis():
         config = create_optimized_config_for_smard(df)
         
         # Save complete analysis
-        print(f"\n💾 Step 2: Saving complete analysis...")
+        print(f"\nStep 2: Saving complete analysis...")
         results_dir, report_file = save_complete_analysis(
             agent, costs, rewards, test_results, config, df, pickle_path
         )
         
         # Display summary
-        print(f"\n🎯 OPTIMIZATION COMPLETE!")
+        print(f"\nOPTIMIZATION COMPLETE!")
         print("="*60)
-        print(f"📊 Performance Summary:")
+        print(f"Performance Summary:")
         print(f"  Cost Reduction: {test_results['improvement_percent']:.1f}%")
         print(f"  Total Savings: €{test_results['cost_savings']:,.2f}")
         print(f"  RL Cost: €{test_results['rl_cost']:,.2f}")
         print(f"  Baseline Cost: €{test_results['baseline_cost']:,.2f}")
         
-        print(f"\n📁 Results Saved To:")
+        print(f"\nResults Saved To:")
         print(f"  Directory: {results_dir}")
         print(f"  Report: {report_file}")
         
-        print(f"\n📊 Generated Files:")
-        print(f"  🎨 Visualizations in: {results_dir}/visualizations/")
-        print(f"  📈 Training plots: training_overview.png, learning_analysis.png")
-        print(f"  📊 Performance plots: performance_overview.png")
-        print(f"  📋 Data analysis: data_analysis.png")
-        print(f"  📄 Summary report: summary_report.md")
-        print(f"  🤖 Trained model: models/trained_agent.pkl")
-        print(f"  📊 Data files: data/*.csv, data/*.json")
+        print(f"\nGenerated Files:")
+        print(f"   Visualizations in: {results_dir}/visualizations/")
+        print(f"  Training plots: training_overview.png, learning_analysis.png")
+        print(f"  Performance plots: performance_overview.png")
+        print(f"  Data analysis: data_analysis.png")
+        print(f"   Summary report: summary_report.md")
+        print(f"   Trained model: models/trained_agent.pkl")
+        print(f"   Data files: data/*.csv, data/*.json")
         
         # Open results folder (if on supported system)
         try:
@@ -78,22 +78,22 @@ def run_complete_rl_analysis():
                 os.system(f"open {results_dir}")
             elif platform.system() == "Windows":
                 os.system(f"explorer {results_dir}")
-            print(f"📁 Opening results folder...")
+            print(f" Opening results folder...")
         except:
             pass
         
         return results_dir, test_results
         
     except FileNotFoundError:
-        print(f"❌ Data file not found: {pickle_path}")
-        print(f"🔧 Please check the file path or run with sample data")
+        print(f" Data file not found: {pickle_path}")
+        print(f" Please check the file path or run with sample data")
         
         # Run with sample data
-        print(f"\n🚀 Running with sample data for demonstration...")
+        print(f"\n Running with sample data for demonstration...")
         return run_sample_analysis()
         
     except Exception as e:
-        print(f"❌ Error during analysis: {e}")
+        print(f" Error during analysis: {e}")
         import traceback
         traceback.print_exc()
         return None, None
@@ -108,14 +108,14 @@ def run_sample_analysis():
         from energy_cost_rl import test_with_smard_data
         test_with_smard_data()
         
-        print(f"\n✅ Sample analysis completed!")
-        print(f"💡 To run with your real data:")
+        print(f"\n Sample analysis completed!")
+        print(f" To run with your real data:")
         print(f"   1. Update pickle_path in the script")
         print(f"   2. Ensure all files are in the same directory")
         print(f"   3. Run: python complete_rl_analysis.py")
         
     except Exception as e:
-        print(f"❌ Sample analysis failed: {e}")
+        print(f" Sample analysis failed: {e}")
     
     return None, None
 
@@ -123,10 +123,10 @@ def show_analysis_guide():
     """Show guide for interpreting the analysis results"""
     
     guide = """
-📊 ANALYSIS RESULTS GUIDE
+ ANALYSIS RESULTS GUIDE
 ========================
 
-📁 Folder Structure:
+ Folder Structure:
 ├── metadata/
 │   └── run_metadata.json          # Complete run configuration
 ├── data/
@@ -147,20 +147,20 @@ def show_analysis_guide():
 └── reports/
     └── summary_report.md           # Complete summary
 
-🎯 Key Metrics to Look For:
+ Key Metrics to Look For:
 - Cost Reduction %: Higher is better (target: >10%)
 - Total Savings: Absolute cost savings in €
 - Gas Utilization: How often gas plant operates
 - Storage Activity: Battery charging/discharging frequency
 - H2 Production: Hydrogen production frequency
 
-📊 Important Charts:
+ Important Charts:
 1. Training Overview: Shows learning progress
 2. Performance Comparison: RL vs Baseline costs
 3. Action Analysis: Operational strategy patterns
 4. Market Analysis: Price and renewable patterns
 
-💡 Optimization Tips:
+ Optimization Tips:
 - More episodes = better learning (try 100-200)
 - Adjust system capacities based on your actual plant
 - Monitor golden hours utilization
@@ -174,7 +174,7 @@ if __name__ == "__main__":
     results_dir, test_results = run_complete_rl_analysis()
     
     if results_dir:
-        print(f"\n📚 Analysis complete! Check your results in:")
+        print(f"\n Analysis complete! Check your results in:")
         print(f"   {results_dir}")
         
         # Show guide
@@ -182,7 +182,7 @@ if __name__ == "__main__":
         show_analysis_guide()
     
     else:
-        print(f"\n⚠️  Analysis could not be completed.")
-        print(f"💡 Check the error messages above for troubleshooting.")
+        print(f"\n  Analysis could not be completed.")
+        print(f" Check the error messages above for troubleshooting.")
     
-    print(f"\n🎉 Thank you for using the RL Energy Optimization System!")
+    print(f"\n Thank you for using the RL Energy Optimization System!")
